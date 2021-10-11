@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>Artem Portfolio</title>
+    </head>
+        <body>
+            <div class="container">
+                    <img src="hi.jpg" alt="Здесь должен быть я" class="avatar">
+                    <h1>Artem Yasinscky</h1>
+                    <p><em>I'm a beginner frontend developer.</em></p>
+
+            <div>
+                <h4>My social networks</h4>
+                    <a href="https://vk.com/id331959491" class="uil uil-vk" target="_blank"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100073326057192" class="uil uil-facebook" target="_blank"></a>
+
+            </div>
+                <hr>
+                <h2>My interests</h2>
+                    <p>Traveling</p>
+                    <img src="travel.png" width="50">
+                    <p>Gaming</p>
+                    <img src="game.png" width="50">
+                    <p>Watch YouTube</p>
+                    <img src="youtube.png" width="50">
+                <hr>
+                <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="30"></div>
+            </div>
+            </div>
+    
+            <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="20"></div>
+            </div>
+            </div>
+    
+            <div class="skill">
+            <div class="skill-name">Javascript</div>
+            <div class="skill-bar">
+                <div class="skill-per" per="10"></div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            $('.skill-per').each(function(){
+            var $this = $(this);
+            var per = $this.attr('per');
+            $this.css("width",per+'%');
+            $({animatedValue: 0}).animate({animatedValue: per},{
+                duration: 1000,
+                step: function(){
+                $this.attr('per', Math.floor(this.animatedValue) + '%');
+                },
+                complete: function(){
+                $this.attr('per', Math.floor(this.animatedValue) + '%');
+                }
+            });
+            });
+        </script>
+        </div>
+        </body>
+  </html>
